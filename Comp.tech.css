@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
+@keyframes growProgressBar {
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+  100% {
+    --pgPercentage: var(--value);
+  }
+}
+
+@property --pgPercentage {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  --size: 6rem;
+  --fg: #19ff81;
+  --bg: #def;
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+      closest-side,
+      white 80%,
+      transparent 0 99.9%,
+      white 0
+    ),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: "Inconsolata";
+  font-size: calc(var(--size) / 5);
+  color: var(--fg);
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "%";
+}
+
+
+body {
+  background-color: black;
+  font-family: "Inconsolata";
+  /* background-size: cover; */
+  font-weight: bold;
+  color: #19ff81;
+  font-size: 1em;
+  background-image: radial-gradient(#11581e, #041607);
+  background-size: auto 4px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav :hover {
+  color: chartreuse;
+}
+
+a {
+  color: #19ff81;
+  list-style: none;
+  text-decoration: none;
+}
+
+main {
+flex-direction: row;
+
+}
+
+.art1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 65px;
+
+}
+
+.art2 {
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 65px;
+
+}
+
+
+.progress-circle{
+    font-size: 5em;
+    width: 7vw;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+footer {
+  height: 9vh;
+ position: absolute;
+  bottom: 10px;
+  width: 100%;
+  right: 10px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  height: 8vh;
+  align-content: center;
+  align-items: center;
+  padding: 0 70px;
+}
+
+.hp {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  justify-content: center;
+  text-align: center;
+  background-color: #11581e;
+  height: 6vh;
+  opacity: 80%;
+}
+
+.levelbarre {
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+  height: 6vh;
+  background-color: #11581e;
+  opacity: 80%;
+}
+
+.level {
+  display: flex;
+  flex-direction: column;
+  height: 6vh;
+  width: 30%;
+  justify-content: center;
+  background-color: #11581e;
+  opacity: 80%;
+}
+
+.barrexp {
+  display: flex;
+  flex-direction: column;
+  background-color: #19ff81;
+  width: 70%;
+  margin: 8px;
+}
+
+.ap {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 6vh;
+  justify-content: center;
+  text-align: center;
+  background-color: #11581e;
+  opacity: 80%;
+}
+
+.nav-button {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-empty {
+  border: 3px solid #19ff81;
+  display: flex;
+}
+
+.nav-top {
+  border: 1px solid #19ff81;
+}
+
+.colmid {
+  border: 1px solid #19ff81;
+}
+
+.colleft  {
+  border: 1px solid #19ff81;
+}
+
+.colright {
+  border: 1px solid #19ff81;
+}
+
+.colactive  {
+  border: 1px solid #19ff81;
+}
+
+.col {
+  border: 1px solid #19ff81;
+}
+
+.nav-bottom {
+  border: 1px solid #19ff81;
+}
